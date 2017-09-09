@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wanderlist</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>   
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</head>
+
+<body>
+ <nav class="#0288d1 light-blue darken-2 text-stationary" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo heading h5 light">Wanderlist</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">My Itinerary</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">My Itinerary</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+    <div class="carousel carousel-slider center" data-indicators="true">
+        <div class="carousel-fixed-item center">
+        </div>
+<!-- FIRST PANEL - CITIES -->
+    <div class="carousel-item #e57373 #ffd54f amber lighten-2 white-text  img src="../assets/img/background2.jpg href="#one!">
+
+      <h2>Choose A City</h2>
+      <p class="white-text">Most Traveled Cities in 2017</p>
+      <br>
+      <br>
+      <br>
+        <a class="btn waves-effect white grey-text darken-text-2" id="bkk">Bangkok</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="lon">London</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="par">Paris</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="dub">Dubai</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="ny">New York City</a>
+    </div>
+<!-- SECOND PANEL - HOTELS TO - BE IN JS -->
+    <div class="carousel-item #e57373 red lighten-2 white-text" href="#two!">
+      <h2>Hotel Choices</h2>
+      <p class="white-text">Choices based on 2017 top Trivago reviews</p>
+      <br>
+      <br>
+      <br>
+        <a class="btn waves-effect white grey-text darken-text-2" id="hotel0">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="hotel1">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="hotel2">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="hotel3">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="hotel4">button</a>
+    </div>
+<!-- THIRD PANEL- THINGS TO DO - TO BE IN JS -->
+    <div class="carousel-item #81c784 green lighten-2 white-text" href="#three!">
+      <h2>Top 5 Things To Do</h2>
+      <p class="white-text">Choices based on 2017 top Trivago reviews</p>
+      <br>
+      <br>
+      <br>
+        <a class="btn waves-effect white grey-text darken-text-2" id="events0">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="events1">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="events2">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="events3">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2" id="events4">button</a>
+    </div>
+<!-- FOURTH PANEL - PLACES TO EAT - TO BE IN JS -->
+    <div class="carousel-item #4fc3f7 light-blue lighten-2 white-text" href="#four!">
+      <h2>Places To Eat In</h2>
+      <p class="white-text">Choices based on 2017 top Trivago reviews</p>
+      <br>
+      <br>
+      <br>
+        <a class="btn waves-effect white grey-text darken-text-2 last" id="restaurant0">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2 last" id="restaurant1">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2 last" id="restaurant2">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2 last" id="restaurant3">button</a>
+        <a class="btn waves-effect white grey-text darken-text-2 last" id="restaurant4">button</a>
+    </div>
+        <div class="carousel-item #4dd0e1 cyan lighten-2 white-text" href="#four!">
+      <h2>Your Itinerary</h2>
+      <p class="white-text">Enjoy Your Trip!</p>
+      <br>
+      <ul id="selected-data"></ul>
+      <br>
+      <br>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center blue-text"><i class="material-icons">add_location</i></h2>
+                        <h5 class="center">Pick a Top Location</h5>
+                        <p class="light">The development team at Wanderlist has made it simple to pick a destination without days of research. People love our destinations, hotels, and to-do choices, in fact, we dare to say everyone does.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center blue-text"><i class="material-icons">airplanemode_active</i></h2>
+                        <h5 class="center">Book Your Trip</h5>
+                        <p class="light">We've tried to take the stress of travel decision making, especially international travel, and make it simple. Once you've gone through our four prompts take a look at your new itinerary, click the link and book, that simple!</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center blue-text"><i class="material-icons">beach_access</i></h2>
+                        <h5 class="center">Enjoy your Vaction</h5>
+                        <p class="light">Because our vacation choices are the top booked travel destinations in the world, we are positive these choices are not going to dissapoint. Book, Relax, and Enjoy your vacation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row">
+                    <h5 class="header col s12 light white-text center-align">Less stress, more vacation.</h5>
+                </div>
+            </div>
+
+      <div class="parallax"><img src="../assets/img/background2.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Our Vision</h4>
+                    <p class="left-align light">The development team at Wanderlist has made it simple to pick a destination without days of research. People love our destinations, hotels, and to-do choices, in fact, we dare to say everyone does.
+                    We've tried to take the stress of travel decision making, especially international travel, and make it simple. Once you've gone through our four prompts take a look at your new itinerary, click the link and book, that simple!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row">
+                    <h5 class="header center-align col s12 light white-text">We've done deep data mining and analysis and found travel booking should be easy.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="../assets/img/background3.jpg" alt="Unsplashed background img 3"></div>
+    </div>
+<br>
+<!-- The Team -->
+    <div class="row" style="">
+            <div class="col s10 m7 l2">
+            </div>
+            <div class="col s10 m7 l2">
+              <div class="card card-panel hoverable">
+                <div class="card-image">
+                  <img src="../assets/img/Jameka.jpg">
+                  <span class="card-title">Jameka</span>
+                </div>
+                <div class="card-content">
+                  <p>Team Lead Dev</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col s10 m7 l2">
+              <div class="card card-panel hoverable">
+                <div class="card-image">
+                  <img src="../assets/img/Trevor.jpg">
+                  <span class="card-title">Trevor</span>
+                </div>
+                <div class="card-content">
+                  <p>Lead UX/UI</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col s10 m7 l2">
+              <div class="card card-panel hoverable">
+                <div class="card-image">
+                  <img src="../assets/img/Madeleine.jpg">
+                  <span class="card-title">Madeleine</span>
+                </div>
+                <div class="card-content">
+                  <p>Lead Frontend</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col s10 m7 l2">
+              <div class="card card-panel hoverable">
+                <div class="card-image">
+                  <img src="../assets/img/Edgar.jpg">
+                  <span class="card-title">Edgar</span>
+                </div>
+                <div class="card-content">
+                  <p>Lead Backend</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+<br>
+<br>
+<br>
+    <footer class="page-footer #0288d1 light-blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">WANDERLIST Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students that want travelling to be simple. Less stress, more vacation.</p>
+                    <p class="grey-text text-lighten-4">Need support?</p>
+                    <a class="waves-effect waves-light btn" a href="https://www.google.com/">Chat</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made with
+                <i class="tiny material-icons brown-text text-lighten-3">favorite</i>
+                by
+                <a class="brown-text text-lighten-3" href="http://materializecss.com">
+                WANDERLIST TEAM
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- MATERIALIZE SCRIPTS -->
+    <script type="text/javascript">
+    $('.carousel.carousel-slider').carousel({ full_width: true });
+    $(document).ready(function() {
+        $('.parallax').parallax();
+    });
+    </script>
+    <!--  Scripts-->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+        <!-- JQUERY Section -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".indicators").attr("id","list");
+      $("#list").eq(1).addClass("active");
+      var cityList = ["Bangkok", "London", "Paris", "Dubai", "New York City"];
+      var bkkhotel = ["The Siam", "Mandarin Oriental", "Ariyasomvilla", "COMO", "Adelphi49"];
+      var bkkevents = ["Buddha Temple", "BTS Skytrain", "Shops Empire Tailors", "Tour with Tong", "Thai Private Tour guide"];
+      var bkkrest = ["Snooze Coffee House", "Savelbergth", "Smoking Pug", "DID", "Punjab Grill"];
+       var lonhotel = ["Hotel 41", "Egerton House", "The Milestone", "Taj 51 Buckingham", "COMO The Halkin"];
+       var lonevents = ["British Museum", "National Gallery", "Tower of London", "Victoria and Albert Museum", "Big Ben"];
+       var lonrest = ["Peninsula Restaurant", "Kibele", "Anjanaas", "Liman", "The Clink"];
+       var parhotel = ["Masion Souquet", "XO Hotel", "Le Narcisse Blanc", "Hotel Monge", "Le Bristol"];
+       var parevents = ["Musse d'Orsay", "Eiffel Tower", "Musee du Louvre", "Notre Dame Cathedral", "Saintee-Chapelle"];
+       var parrest = ["ASPIC", "Les Apotres de Pigalle", "L'Abeille", "Boutary", "Le Cinq"];
+       var dubhotel = ["Royal Mirage Dubai", "Raffles Dubai", "The Palm Dubai", "Grosvenor House", "The Oberoi"];
+       var dubevents = ["Dubai Fountains", "Burj Khalifa", "The Dubai Mall", "Burj Al Arab", "Aquaventure Waterpark"];
+       var dubrest = ["Cielo", "Entrecote Cafe de Paris", "Sloane's", "Garden", "Indego"]; 
+       var nyhotel = ["414 Hotel", "Hotel Giraffe", "Casablanca Hotel", "Hotel 50 Bowery", "Crosby Street Hotel"];
+       var nyevents = ["Central Park", "911 Memorial", "The Metropolitan Art Museum", "Top of the Rock Observatory Deck", "Grand Central Terminal"];
+       var nyrest = ["Daniel", "Gabriel Kreuther", "Per Se", "Pisillo", "Lincoln Square Steak"];
+       // <!-- Bangkok -->
+      $("#bkk").on("click", function(){
+        //$("#hotel1").text("abc");
+        for (i=0; i<bkkhotel.length; i++) {
+          $("#hotel"+[i]).text(bkkhotel[i]);
+          $("#hotel"+[i]).attr('id', "bkkhotel"+[i]);
+        }
+        for (i=0; i<bkkevents.length; i++) {
+          $("#events"+[i]).text(bkkevents[i]);
+          $("#events"+[i]).attr('id', "bkkevents"+[i]);
+        }
+        for (i=0; i<bkkrest.length; i++) {
+          $("#restaurant"+[i]).text(bkkrest[i]);
+          $("#restaurant"+[i]).attr('id', "bkkrest"+[i]);
+        }
+      });
+      // <!-- London -->
+      $("#lon").on("click", function(){
+        //$("#hotel1").text("abc");
+        for (i=0; i<lonhotel.length; i++) {
+          $("#hotel"+[i]).text(lonhotel[i]);
+          $("#hotel"+[i]).attr('id', "lonhotel"+[i]);
+        }
+        for (i=0; i<lonevents.length; i++) {
+          $("#events"+[i]).text(lonevents[i]);
+          $("#events"+[i]).attr('id', "lonevents"+[i]);
+        }
+        for (i=0; i<bkkrest.length; i++) {
+          $("#restaurant"+[i]).text(lonrest[i]);
+          $("#restaurant"+[i]).attr('id', "lonrest"+[i]);
+        }
+      });
+      // <!-- Paris -->
+      $("#par").on("click", function(){
+        //$("#hotel1").text("abc");
+        for (i=0; i<parhotel.length; i++) {
+          $("#hotel"+[i]).text(parhotel[i]);
+          $("#hotel"+[i]).attr('id', "parhotel"+[i]);
+        }
+        for (i=0; i<lonevents.length; i++) {
+          $("#events"+[i]).text(parevents[i]);
+          $("#events"+[i]).attr('id', "parevents"+[i]);
+        }
+        for (i=0; i<bkkrest.length; i++) {
+          $("#restaurant"+[i]).text(parrest[i]);
+          $("#restaurant"+[i]).attr('id', "parrest"+[i]);
+        }
+      });
+      // <!-- Dubai -->
+       $("#dub").on("click", function(){
+        //$("#hotel1").text("abc");
+        for (i=0; i<dubhotel.length; i++) {
+          $("#hotel"+[i]).text(dubhotel[i]);
+          $("#hotel"+[i]).attr('id', "dubhotel"+[i]);
+        }
+        for (i=0; i<dubevents.length; i++) {
+          $("#events"+[i]).text(dubevents[i]);
+          $("#events"+[i]).attr('id', "dubevents"+[i]);
+        }
+        for (i=0; i<dubrest.length; i++) {
+          $("#restaurant"+[i]).text(dubrest[i]);
+          $("#restaurant"+[i]).attr('id', "dubrest"+[i]);
+        }
+      });
+       // <!-- New York -->
+        $("#ny").on("click", function(){
+        //$("#hotel1").text("abc");
+        for (i=0; i<nyhotel.length; i++) {
+          $("#hotel"+[i]).text(nyhotel[i]);
+          $("#hotel"+[i]).attr('id', "nyhotel"+[i]);
+        }
+        for (i=0; i<lonevents.length; i++) {
+          $("#events"+[i]).text(nyevents[i]);
+          $("#events"+[i]).attr('id', "nyevents"+[i]);
+        }
+        for (i=0; i<bkkrest.length; i++) {
+          $("#restaurant"+[i]).text(nyrest[i]);
+          $("#restaurant"+[i]).attr('id', "nyrest"+[i]);
+        }
+      });
+    var dataItinerary = [];
+      // <-- carrousel -->
+      $(".btn").on("click", function(){
+        $('.carousel').carousel('next');
+        // sending data to database
+        dataItinerary.push(this.innerText)
+        console.log(dataItinerary)
+      });
+      $('.last').click(function(){
+        for (var i=0; i<dataItinerary.length; i++){
+          $("#selected-data").append('<li>' + dataItinerary[i] +'</li>')
+        }
+      }) 
+    });
+      // <-- counter -->
+      var count = 0;
+      $().click(function(){
+      });
+    </script>
+</body>
+</html>
+
